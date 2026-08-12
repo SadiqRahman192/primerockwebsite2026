@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@18..144,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "system-ui", "sans-serif";
+  --font-serif: "Merriweather", "Georgia", "serif";
+  --font-arabic: "Alexandria", "sans-serif";
+}
+
+[dir="rtl"] body {
+  font-family: "Alexandria", "sans-serif";
+}
+
+/* CLIENTS SLIDER */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite; /* slower = more premium feel */
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* WHATS APP BUTTON */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s ease-in-out infinite;
+}
+
+/* Supply Details Page */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 35s linear infinite reverse;
+  will-change: transform;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}

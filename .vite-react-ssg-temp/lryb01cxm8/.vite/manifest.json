@@ -1,0 +1,22 @@
+{
+  "src/main.jsx": {
+    "file": "main.mjs",
+    "name": "main",
+    "src": "src/main.jsx",
+    "isEntry": true,
+    "assets": [
+      "assets/bgremovelogo-CsfVsoW5.png",
+      "assets/mainhero-Dhuktx2_.png",
+      "assets/projectImage1-Z8e7SJn_.jpg",
+      "assets/projectImage2-D_SESstF.jpg",
+      "assets/projectImage3-aKQgnSNQ.jpg",
+      "assets/supply-CL-GqU_W.jpg",
+      "assets/installation-D5Tp1Acu.jpg",
+      "assets/consultancy-DksVQz9M.jpeg",
+      "assets/projectImage4-B6I3ky8t.jpg",
+      "assets/projectImage5-BKD9TGQ3.jpg",
+      "assets/projectImage6-CC-JgHdX.jpg",
+      "assets/projectimage7-Cr8dANIV.jpg"
+    ]
+  }
+}
