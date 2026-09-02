@@ -1,6 +1,6 @@
 import damac from '../assets/ourclientsicons/damac.jpeg';
 import freeeage from '../assets/ourclientsicons/freeeage.avif';
-import gamma from '../assets/ourclientsicons/gamma.png';
+import gamma from '../assets/ourclientsicons/gammma.png';
 import hidubai from '../assets/ourclientsicons/hidubai.png';
 import sp from '../assets/ourclientsicons/sp.png';
 import { useTranslation } from 'react-i18next';
