@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logoandhero/bgremovelogo.png';
 import { useTranslation } from 'react-i18next';
-import ServicesMegaDropdown from './ServicesMegaDropdown';
+import ServicesMegaDropdown from './ServicesMegaDropdown.jsx';
 
 function Navbar() {
   const { t, i18n } = useTranslation();
