@@ -2,14 +2,31 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logoandhero/bgremovelogo.png';
 import { useTranslation } from 'react-i18next';
+import ServicesMegaDropdown from './ServicesMegaDropdown';
 
 function Navbar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  const services = [
+    {
+      titleKey: "service_supply",
+      slug: "/supplyDetails",
+    },
+    {
+      titleKey: "service_installation",
+      slug: "/installationDetails",
+    },
+    {
+      titleKey: "service_consultancy",
+      slug: "/consultancyDetails",
+    }
+  ];
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'ar' ? 'en' : 'ar';
@@ -76,9 +93,7 @@ function Navbar() {
             </button>
           </li>
           <li>
-            <button onClick={() => goToSection('our-services')} className="hover:text-blue-900 transition-colors">
-              {t('nav_services')}
-            </button>
+            <ServicesMegaDropdown />
           </li>
           <li>
             <button onClick={() => goToSection('projects')} className="hover:text-blue-900 transition-colors">
@@ -132,10 +147,39 @@ function Navbar() {
                   {t('nav_about')}
                 </button>
               </li>
-              <li>
-                <button onClick={() => goToSection('our-services')} className="hover:text-blue-900 transition-colors">
+              <li className="w-full">
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="hover:text-blue-900 transition-colors flex items-center justify-center gap-2 mx-auto"
+                >
                   {t('nav_services')}
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
+                {mobileServicesOpen && (
+                  <ul className="mt-3 bg-gray-50 rounded-lg py-2 w-full max-w-xs mx-auto">
+                    {services.map((service, index) => (
+                      <li key={index}>
+                        <Link
+                          to={service.slug}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setMobileServicesOpen(false);
+                          }}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-white hover:text-[#0A2647] transition-colors"
+                        >
+                          {t(service.titleKey)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
               <li>
                 <button onClick={() => goToSection('projects')} className="hover:text-blue-900 transition-colors">
